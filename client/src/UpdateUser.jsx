@@ -26,7 +26,7 @@ export default function UpdateUser() {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/updateUser/"+id, {
+      .put("http://localhost:3001/updateUser/" + id, {
         name,
         email,
         phone,

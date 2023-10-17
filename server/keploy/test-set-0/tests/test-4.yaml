@@ -1,0 +1,71 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-4
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:3001/createUser
+        header:
+            Accept: application/json, text/plain, */*
+            Accept-Encoding: gzip, deflate, br
+            Accept-Language: en-US,en
+            Connection: keep-alive
+            Content-Length: "89"
+            Content-Type: application/json
+            Host: localhost:3001
+            Origin: http://localhost:5173
+            Referer: http://localhost:5173/
+            Sec-Ch-Ua: '"Chromium";v="118", "Brave";v="118", "Not=A?Brand";v="99"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"Windows"'
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            Sec-Gpc: "1"
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+        body: '{"name":"Arindam Majumder","email":"arindammajumder2020@gmail.com","phone":"08902208995"}'
+        body_type: ""
+    resp:
+        status_code: 200
+        header:
+            Access-Control-Allow-Origin: '*'
+            Connection: keep-alive
+            Content-Length: "127"
+            Content-Type: application/json; charset=utf-8
+            Date: Tue, 17 Oct 2023 16:18:56 GMT
+            Etag: W/"7f-Go9ERljpw8LVBraZIjk7mI+378w"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: '{"name":"Arindam Majumder","email":"arindammajumder2020@gmail.com","phone":8902208995,"_id":"652eb3f01588c95f540cdbb6","__v":0}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1697559538
+curl: |-
+    curl --request POST \
+      --url http://localhost:3001/createUser \
+      --header 'Sec-Fetch-Dest: empty' \
+      --header 'Accept-Language: en-US,en' \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Accept: application/json, text/plain, */*' \
+      --header 'Referer: http://localhost:5173/' \
+      --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36' \
+      --header 'Host: localhost:3001' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Ch-Ua-Platform: "Windows"' \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Sec-Fetch-Site: same-site' \
+      --header 'Sec-Ch-Ua: "Chromium";v="118", "Brave";v="118", "Not=A?Brand";v="99"' \
+      --header 'Content-Type: application/json' \
+      --header 'Sec-Gpc: 1' \
+      --data '{"name":"Arindam Majumder","email":"arindammajumder2020@gmail.com","phone":"08902208995"}'

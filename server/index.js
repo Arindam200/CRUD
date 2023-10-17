@@ -11,12 +11,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/crud");
 
 app.post("/createUser", (req, res) => {
   UserModel.create(req.body)
-    // {
 
-    // name: req.body.name,
-    // email: req.body.email,
-    // phone: req.body.phone,
-    // }
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
@@ -47,7 +42,8 @@ app.get("/", (req, res) => {
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
 });
-
 app.listen(3001, () => {
   console.log("server is running on port 3001");
 });
+
+

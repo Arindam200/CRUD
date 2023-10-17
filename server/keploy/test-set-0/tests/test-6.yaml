@@ -1,0 +1,67 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-6
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:3001/
+        header:
+            Accept: application/json, text/plain, */*
+            Accept-Encoding: gzip, deflate, br
+            Accept-Language: en-US,en
+            Connection: keep-alive
+            Host: localhost:3001
+            If-None-Match: W/"81-vJcumDZqysa536/jF63kS5E7/1c"
+            Origin: http://localhost:5173
+            Referer: http://localhost:5173/
+            Sec-Ch-Ua: '"Chromium";v="118", "Brave";v="118", "Not=A?Brand";v="99"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"Windows"'
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            Sec-Gpc: "1"
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36
+        body: ""
+        body_type: ""
+    resp:
+        status_code: 304
+        header:
+            Access-Control-Allow-Origin: '*'
+            Connection: keep-alive
+            Date: Tue, 17 Oct 2023 16:18:56 GMT
+            Etag: W/"81-vJcumDZqysa536/jF63kS5E7/1c"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: ""
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects: []
+    assertions:
+        noise:
+            - header.Date
+    created: 1697559542
+curl: |
+    curl --request GET \
+      --url http://localhost:3001/ \
+      --header 'Origin: http://localhost:5173' \
+      --header 'Accept: application/json, text/plain, */*' \
+      --header 'Referer: http://localhost:5173/' \
+      --header 'Sec-Fetch-Dest: empty' \
+      --header 'Sec-Gpc: 1' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36' \
+      --header 'If-None-Match: W/"81-vJcumDZqysa536/jF63kS5E7/1c"' \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Language: en-US,en' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Host: localhost:3001' \
+      --header 'Sec-Ch-Ua: "Chromium";v="118", "Brave";v="118", "Not=A?Brand";v="99"' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'Sec-Ch-Ua-Platform: "Windows"' \
+      --header 'Sec-Fetch-Site: same-site' \
