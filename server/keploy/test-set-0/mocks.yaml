@@ -17196,3 +17196,36 @@ spec:
           read_delay: 1435683
     created: 1697569256
 curl: ""
+---
+version: api.keploy.io/v1beta2
+kind: Mongo
+name: mocks
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"ismaster":{"$numberInt":"1"},"$db":"admin"} }], checksum: 0 }'
+    requests:
+        - header:
+            length: 55
+            requestId: 524
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"ismaster":{"$numberInt":"1"},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10007193641
+    responses:
+        - header:
+            length: 304
+            requestId: 1093
+            responseTo: 524
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"ismaster":true,"topologyVersion":{"processId":{"$oid":"652eb1803633f87b909c61e1"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1697569266165"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"3"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 1340143
+    created: 1697569266
+curl: ""
